@@ -65,7 +65,7 @@ return(
                     fontWeight:"700",
                     mt:"20px",
                     color:"#272829"}}>
-                    Hi, I am <Typography component="span" sx={{ color: "#D80032" }}> Titus Ukpono a </Typography>
+                    Hi, I am <Typography component="span" sx={{ color: "#D80032", fontSize:"3rem" }}> Titus Ukpono a </Typography>
                     <Typewriter
                   options={{
                     strings: [
