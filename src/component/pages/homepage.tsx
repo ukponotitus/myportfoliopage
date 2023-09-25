@@ -15,8 +15,6 @@ import dynamic from 'next/dynamic';
 import PortfolioCard from "../common/card/portfoliocard"
 import NextDataItem from "./data/nextdata"
 
-// import { profile } from "console"
-
 type TypewriterInstance = TypewriterClass;
 export default function HomePage(){
     const typewriterRef = React.useRef<TypewriterInstance | null>(null);
@@ -34,7 +32,6 @@ export default function HomePage(){
       .typeString("Developer.")
       .start()
       .callFunction(() => {
-        // Restart the typewriter animation
         startTypewriter();
       });
   };
@@ -43,7 +40,7 @@ export default function HomePage(){
     if (typewriterRef.current) {
       startTypewriter(); 
     }
-  }, []);
+  }, [startTypewriter]);
   
 return(
     <>
@@ -53,8 +50,6 @@ return(
         </Box>
         <Box>
         <Stack 
-        // direction="row" 
-        // justifyContent="space-around" 
         sx={{mt:"15%",
         mx:"auto", mb:"30px",
         display: 'flex', 
@@ -73,7 +68,7 @@ return(
                 }}>
                     Hi, I'm <span style={{color:"#D80032"}}> Titus Ukpono a </span>
                     <Typewriter
-                  options={{ // Specify typewriter options here
+                  options={{
                     strings: [
                       "FrontEnd Developer.",
                       "ProfessionalCoder.",
@@ -100,12 +95,10 @@ return(
                      amazing but also perform flawlessly.
                 </Typography>
                 <Box sx={{mt:"30%"}}>
-                    {/* <Link href="/"> */}
                     <Typography sx={{
                     color:"#4D4D4D",
                     fontSize:"16px",
                 }}>FIND WITH ME</Typography>
-                    {/* </Link> */}
                     <Stack direction="row" spacing={5} mt="20px">
                         <Button sx={{
                             boxShadow:"1px 1px 10px 10px #FFF",
@@ -242,8 +235,7 @@ return(
                 textAlign:"center",
                 mx:"30px",
                 boxShadow:"1px 1px 10px 10px #FFF",
-                  borderRadius:"10px",
-                //   textDecoration:"none"
+                  borderRadius:"10px"
                 }}>
                         <Button sx={{fontSize:"20px", color:"#000", 
                     textTransform:"none",
@@ -258,7 +250,6 @@ return(
                 mx:"30px",
                 boxShadow:"1px 1px 10px 10px #FFF",
                 borderRadius:"10px",
-                // textDecoration:"none"
                 }}>
                         <Button sx={{fontSize:"20px", color:"#000",
                     textTransform:"none",
