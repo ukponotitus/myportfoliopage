@@ -64,9 +64,8 @@ return(
                     fontSize:"50px",
                     fontWeight:"700",
                     mt:"20px",
-                    color:"#272829"
-                }}>
-                    Hi, I'm <span style={{color:"#D80032"}}> Titus Ukpono a </span>
+                    color:"#272829"}}>
+                    Hi, I am <Typography component="span" sx={{ color: "#D80032" }}> Titus Ukpono a </Typography>
                     <Typewriter
                   options={{
                     strings: [
@@ -85,7 +84,7 @@ return(
                     fontSize:"16px",
                     mt:"10px"
                 }}>
-                I'm a front-end magician. My passion for coding
+                I am a front-end magician. My passion for coding
                  and creativity has led me to the fascinating world 
                  of front-end development, where I bring digital visions to life.
                     In my journey as a front-end developer, I craft immersive 
