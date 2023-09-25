@@ -26,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['HOME', 'FEATURES', 'PORTFOLIO', 'RESUME', 'CLIENTS', 'PRICING', 'BLOG', 'Contact'];
+const navItems = ['HOME', 'FEATURES', 'PORTFOLIO', 'RESUME', 'PRICING', 'BLOG', 'Contact'];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -60,7 +60,7 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" elevation={0} sx={{
-        backgroundColor:"white",
+        backgroundColor:"#F0F0F0",
         color:"black",
         height:"15vh"
       }}>
@@ -93,7 +93,7 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, mt:"25px" }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#000', fontWeight:"600" }}>
+              <Button key={item} sx={{ color: '#000', fontWeight:"600", fontSize:"16px" }}>
                 {item}
               </Button>
             ))}
