@@ -23,7 +23,6 @@ import dynamic from "next/dynamic";
 import PortfolioCard from "../common/card/portfoliocard";
 import NextDataItem from "../../data/nextdata";
 import MYResume from "../common/card/resumecard";
-// import ResumeData from "./data/resumedata"
 import { IResumeType } from "@/lib/interface/resume";
 import ProfessionalSkills from "../common/card/education";
 import RoundButton from "../common/roundbutton";
@@ -31,10 +30,6 @@ import ResumeData from "@/data/resumedata";
 
 type TypewriterInstance = TypewriterClass;
 export default function HomePage() {
-  const [active, setActive] = useState("firstresume");
-  console.log("ResumeData:");
-  console.log("active:", active);
-  // console.log("ia array", Array.isArray());
   const typewriterRef = React.useRef<TypewriterInstance | null>(null);
   const Typewriter = dynamic(() => import("typewriter-effect"), {
     ssr: false,
@@ -141,7 +136,6 @@ export default function HomePage() {
                 </Typography>
                 <Stack direction={{ md: "row", xs: "row" }}
                   gap="25px"
-                //   justifyContent="space-around"
                   sx={{ mt: { md: "5%", xs: "" } }}>
                     <Box
                      sx={{
@@ -155,7 +149,6 @@ export default function HomePage() {
                         },
                         alignItems: "center",
                         "&:hover": {
-                        //   border: "none",
                           background: "#D80032",
                         },
                       }}>
@@ -372,108 +365,6 @@ export default function HomePage() {
           <Box sx={{ mt: "7%" }}>
             <Divider />
           </Box>
-          {/* <Box mx="10%" mb="20%">
-            <Box sx={{ mt: "7%", textAlign: "center" }}>
-              <Typography sx={{ color: "#D80032" }}>
-                2+ YEARS OF EXPERIENCE
-              </Typography>
-              <Typography sx={{ fontSize: "5rem" }}>My Resume</Typography>
-            </Box>
-            <Stack direction={{ md: "row", xs: "column" }} mt="3rem">
-              <Box
-                sx={{
-                  padding: "6px 16px",
-                  background:
-                    "linear-gradient(90deg, rgba(232,229,229,1) 50%, rgba(255,255,255,1) 100%)",
-                  width: { md: "25%", xs: "100%" },
-                  textAlign: "center",
-                  // mx:"30px",
-                  boxShadow: "1px 1px 10px 10px #FFF",
-                  borderRadius: "10px",
-                }}
-              >
-                <Button
-                  onClick={() => setActive("firstresume")}
-                  sx={{
-                    fontSize: "20px",
-                    color: "#000",
-                    textTransform: "none",
-                    "&:hover": {
-                      color: "#D80032",
-                    },
-                  }}
-                >
-                  My Resume
-                </Button>
-              </Box>
-              <Box
-                sx={{
-                  padding: "6px 16px",
-                  background:
-                    "linear-gradient(90deg, rgba(232,229,229,1) 50%, rgba(255,255,255,1) 100%)",
-                  width: { md: "25%", xs: "100%" },
-                  textAlign: "center",
-                  // mx:"30px",
-                  boxShadow: "1px 1px 10px 10px #FFF",
-                  borderRadius: "10px",
-                  mt: { xs: "8%", md: "px" },
-                }}
-              >
-                <Button
-                  onClick={() => setActive("secondresume")}
-                  sx={{
-                    fontSize: "20px",
-                    color: "#000",
-                    textTransform: "none",
-                    "&:hover": {
-                      color: "#D80032",
-                    },
-                  }}
-                >
-                  Professional Skills
-                </Button>
-              </Box>
-              <Box
-                sx={{
-                  padding: "6px 16px",
-                  background:
-                    "linear-gradient(90deg, rgba(232,229,229,1) 50%, rgba(255,255,255,1) 100%)",
-                  width: { md: "25%", xs: "100%" },
-                  textAlign: "center",
-                  // mx:"30px",
-                  boxShadow: "1px 1px 10px 10px #FFF",
-                  borderRadius: "10px",
-                  textDecoration: "none",
-                  mt: { xs: "8%", md: "px" },
-                }}
-              >
-                <Button
-                  onClick={() => setActive("thirdresume")}
-                  sx={{
-                    fontSize: "20px",
-                    color: "#000",
-                    textTransform: "none",
-                    "&:hover": {
-                      color: "#D80032",
-                    },
-                  }}
-                >
-                  Experience
-                </Button>
-              </Box>
-            </Stack>
-            <Stack
-              direction="row"
-              justifyContent="center"
-              width="100%"
-              sx={{ border: "solid red", mt: "50px" }}
-            >
-              {active === "firstresume" && <MYResume />}
-              {active === "secondresume" && ( <ProfessionalSkills />
-              )}
-             
-            </Stack>
-          </Box> */}
         </Box>
       </Box>
     </>

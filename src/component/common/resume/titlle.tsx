@@ -29,7 +29,6 @@ export default function CvPage(){
         <Stack direction={{md:"row", xs:"column"}} spacing="10px"
         gap={25}
         px="5%"
-        //  justifyContent="space-around" 
          sx={{background:"#D80032", color:"white", py:"3%"}}
          height="20vh">
             <Box>
