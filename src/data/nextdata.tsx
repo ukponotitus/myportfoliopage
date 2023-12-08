@@ -1,9 +1,9 @@
-import develop1 from "../../../images/develop1.jpg"
-import design1 from "../../../images/design1.jpg"
-import applicat1 from "../../../images/applicat1.jpg"
-import figma from "../../../images/figma.jpg"
-import web1 from "../../../images/web1.jpg"
-import web from "../../../images/web.jpg"
+import develop1 from "../images/develop1.jpg"
+import design1 from "../images/design1.jpg"
+import applicat1 from "../images/applicat1.jpg"
+import figma from "../images/figma.jpg"
+import web1 from "../images/web1.jpg"
+import web from "../images/web.jpg"
 
 const NextDataItem=[
 {

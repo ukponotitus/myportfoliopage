@@ -1,67 +1,53 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { Grid, Stack, Card } from '@mui/material';
+import { IResumeType } from '@/lib/interface/resume';
+// import resumeData from '@/component/pages/data/resumedata';
+// import ResumeData from '@/component/pages/data/resumedata';
+import TitlePage from '../resume/titlle';
+import ResumeData from '@/data/resumedata';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-function CustomTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+export default function MYResume(props:IResumeType) {
+  useEffect(() => {
+    AOS.init({duration:2000});
+  }, [])
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
-      </Box>
-      <CustomTabPanel value={value} index={0}>
-        Item One
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel>
-    </Box>
+<>
+<Box>
+<Card
+ data-aos="fade-up"
+sx={{
+  background:"#EEEEEE",
+  boxShadow:"1px 1px 10px 10px #FFF",
+  width:{md:"100%", xs:"100%"},
+  height:"300px",
+  borderRadius:"10px",
+  // color:"#D80032",
+  "&:hover":{
+      background:"#D83A56",
+      color:"#FFF",
+  },
+  px:"5%",
+  py:"5%"
+}}>
+  <Typography sx={{fontSize:"4rem"}}>{props.year}</Typography>
+  <Typography sx={{fontSize:"2rem", mt:"2%"}}>{props.degree}</Typography>
+  <Typography sx={{fontSize:"2rem", mt:"2%"}}>{props.title1}</Typography>
+  <Typography sx={{fontSize:"1rem", lineHeight:1.7, mt:"2%"}}>{props.description}</Typography>
+</Card>
+
+{/* <Stack >
+  <TitlePage />
+</Stack> */}
+
+</Box>
+
+</>
   );
 }

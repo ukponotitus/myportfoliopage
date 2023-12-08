@@ -26,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['HOME', 'FEATURES', 'PORTFOLIO', 'RESUME', 'PRICING', 'BLOG', 'Contact'];
+const navItems = ['Home', "About", 'Features', 'Services', 'Resume', 'Blog', 'Contact'];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -39,14 +39,14 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+      UKCODE
       </Typography>
       <Divider />
-      <List>
+      <List sx={{textTransform:"none ", color:"red" }}>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+          <ListItem key={item} disablePadding  sx={{textTransform:"none ", color:"red" }}>
+            <ListItemButton sx={{ textAlign: 'center', textTransform:"none ", color:"red" }}>
+              <ListItemText primary={item}  sx={{textTransform:"none ", color:"red" }}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,13 +54,13 @@ export default function DrawerAppBar(props: Props) {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? () =>  window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" elevation={0} sx={{
-        backgroundColor:"#F0F0F0",
+        backgroundColor:{md:"#F0F0F0", xs:"#D80032"},
         color:"black",
         height:"15vh"
       }}>
@@ -74,7 +74,7 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box mt="25px" mx="10px">
+          <Box mt={{md:"25px", xs:"0px"}} mx={{md:"10px", xs:"0px"}} ml={{md:"0px", xs:"80%"}}>
           <Avatar  sx={{
             width: {xs:"21px", sm:"33px", md:"4.47vw"}, 
           height: {xs:"21px", sm:"33px", md:"4.47vw"} }}>
@@ -89,11 +89,11 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' },  mt:"25px", fontWeight:"600" }}
           >
-           UKDEV
+           UKCODE
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, mt:"25px" }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#000', fontWeight:"600", fontSize:"16px" }}>
+              <Button key={item} sx={{ color: '#272829', fontWeight:"500", fontSize:"16px", textTransform:"none" }}>
                 {item}
               </Button>
             ))}

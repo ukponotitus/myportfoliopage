@@ -21,17 +21,18 @@ export default function FeaturedCard(props:IData){
                 boxShadow:"1px 1px 10px 10px #FFF",
                 borderRadius:"10px",
                 "&:hover":{
-                    backgroundColor:"#D80032",
-                    color:"#FFF0F5"
+                    background:"#D80032",
+                    color:"#FFF",
+                    // boxShadow:"5px 5px #FFF"
                 },
               }}>
                 
                 <Stack mx="15%" sx={{mt:"15%",
-            "&:hover":{
-                // backgroundColor:"#D80032",
-                color:"#FFF0F5"
+                "&:hover":{
+                color:"#FFF"
             },}}>
-                <Box fontSize="50px" sx={{color:"#D80032",
+                <Box fontSize="50px" sx={{
+                    color:"#D80032",
                 width:"25%"
             }} >
                  {props.icon}
@@ -39,7 +40,11 @@ export default function FeaturedCard(props:IData){
                 <Box sx={{mt:"20px", fontSize:"25px", fontWeight:"600", color:"#4D4D4D"}}>
                     {props.title}
                 </Box>
-                <Box sx={{mt:"20px", color:"#4D4D4D" }}>
+                <Box sx={{mt:"20px", color:"#4D4D4D",
+             "&:hover":{
+                background:"#green",
+                color:"#FFF"
+            } }}>
                     {props.description}
                 </Box>
                 </Stack>

@@ -11,7 +11,7 @@ export default function Home() {
     <main>
      
       <Box>
-        <HomePage />
+        <HomePage year={''} yearstop={''} title={''} title1={''} description={''} description1={''} description2={''} descr={''} descrip={''} descripti={''} resumeIndex={0} />
       </Box>
     </main>
   )
